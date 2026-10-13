@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+/*
+  THEME TOKENS — change the palette here and the whole site updates.
+  Primary  = deep sage green (trust, calm, grounding)
+  Secondary = warm sand (softness, natural light)
+  Accent   = terracotta clay (warmth, human touch)
+*/
+:root {
+  --background: #f7f2ea;
+  --surface: #fffaf2;
+  --foreground: #26332f;
+  --muted: #5d6b66;
+  --primary: #2f4a43;
+  --primary-foreground: #f7f2ea;
+  --secondary: #e9dfcf;
+  --accent: #a9553a;
+  --accent-foreground: #ffffff;
+  --border: #d9ccb8;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-sans: var(--font-dmsans), system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Italic accent word inside headings, like the original template */
+.accent-word {
+  font-style: italic;
+  color: var(--accent);
+}
+
+/* Consistent heading styles */
+.h-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--primary);
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* FAQ accordion marker */
+details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .faq-icon {
+  transform: rotate(45deg);
+}
